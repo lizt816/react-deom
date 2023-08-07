@@ -5,17 +5,26 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './demo.css';
 import Hello from './demo.js';
+import { BrowserRouter as Router,Routes,Route,Link,RouterProvider } from "react-router-dom";
+import router from "./router/index.js";
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let getFun = (e)=>{
  console.log(e)
 }
 
+// let router = <Router>
+//            <Link to="/hello">
+//              首页
+//            </Link>
+//            <Routes>
+//              <Route path='/hello' element={<Hello />}></Route>
+//            </Routes>
+//           </Router>
 root.render(
- <div>
-  <Hello name='123' getFun={getFun} />
-  <div style={{'paddingBottom':'80px'}}></div>
- </div>
+ // router
+ <RouterProvider router={router} />
 );
 
 

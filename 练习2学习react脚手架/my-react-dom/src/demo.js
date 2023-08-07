@@ -1,6 +1,11 @@
 import React from 'react';
 import Hello2 from './demo2.js';
 import Hello3 from './demo3.js';
+import Hello4 from './demo4.js';
+import Hello5 from './demo5.js';
+import Hello6 from './demo6.js';
+
+
 class Hello extends React.Component {
   state = {
    count:0,
@@ -77,6 +82,12 @@ class Hello extends React.Component {
         <Hello2 xdddd={this.state.xdddd} myFun={this.changexdd} />
         <div style={{'paddingBottom':'80px'}}></div>
         <Hello3 xdddd={this.state.xdddd} myFun={this.changexdd} />
+        <div style={{'paddingBottom':'80px'}}></div>
+        <Hello4 xdddd={this.state.xdddd} myFun={this.changexdd} />
+        <div style={{'paddingBottom':'80px'}}></div>
+        <Hello5 xdddd={this.state.xdddd} myFun={this.changexdd} />
+        <div style={{'paddingBottom':'80px'}}></div>
+        {/* <Hello6 aaa={'123456'} /> */}
       </div>
     )
  }

@@ -13,6 +13,6 @@ class Hello extends React.Component {
         <div onClick={this.aaa}>兄弟1点击我{this.props.xdddd}</div>
       </div>
     )
- }
+  }
 }
 export default Hello

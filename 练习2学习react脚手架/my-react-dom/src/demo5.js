@@ -1,14 +1,47 @@
 import React from 'react';
-class Hello extends React.Component {
-  state = {
-   count:0,
-  }
+
+
+class Hello5 extends React.Component{
+ state = {
+  c:0
+ }
  render(){
-  return (
-      <div style={{background:'#00990d',padding:'20px'}}>
-        <div>333孙级组件</div>
-      </div>
-    )
+   let changec = ()=>{
+    this.setState({
+     c:this.state.c+1
+    })
+   } 
+   // console.log('更新dom就会触发')
+   return (
+     <div style={{background:'pink',padding:'20px'}}>
+      生命周期
+      <div onClick={changec}>点击触发更新 --- {this.state.c}</div>
+      { this.state.c < 3 ? <Hellosss></Hellosss> : '????' }
+     </div>
+   )
+ }
+ componentDidMount(e){
+  // console.log(e,'挂载完毕')
+ }
+ componentDidUpdate(e){
+  // console.log(e,'更新完毕')
+ }
+ componentWillUnmount(e){
+  // console.log(e,'卸载完毕')
  }
 }
-export default Hello
+
+class Hellosss extends React.Component{
+ render(){
+   return (
+     <div style={{background:'#ccc',padding:'20px'}}>
+      卸载
+     </div>
+   )
+ }
+ componentWillUnmount(e){
+  // console.log(e,'卸载完毕')
+ }
+}
+
+export default Hello5
