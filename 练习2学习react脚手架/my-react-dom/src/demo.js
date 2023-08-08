@@ -62,7 +62,7 @@ class Hello extends React.Component {
         <div onClick={this.getDom} >点击我获取实例对象</div>
         <div onClick={this.addArr} >点击我添加arr</div>
 
-        <div onClick={this.getFun} >点击我触发子床父</div>
+        <div onClick={this.getFun} >点击我触发子传父</div>
         
         
         {this.state.arr.map((e,i)=><div key={i}>{e}</div>)}
@@ -87,7 +87,7 @@ class Hello extends React.Component {
         <div style={{'paddingBottom':'80px'}}></div>
         <Hello5 xdddd={this.state.xdddd} myFun={this.changexdd} />
         <div style={{'paddingBottom':'80px'}}></div>
-        {/* <Hello6 aaa={'123456'} /> */}
+        <Hello6 aaa={'123456'} />
       </div>
     )
  }
