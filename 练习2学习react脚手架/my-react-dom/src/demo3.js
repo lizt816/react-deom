@@ -14,15 +14,22 @@ let Hello = ()=> {
     )
 }
 
+
+
 class Hello4 extends React.Component {
  state = {
   count:0,
  }
+ setCount = ()=>{
+  this.setState({
+   count:this.state.count+1
+  })
+ }
 render(){
  return (
        <div style={{background:'#fff',padding:'20px'}}>
-        444
-        <Hello5></Hello5>
+        444 {this.state.count}
+        <Hello5 setCount={this.setCount}></Hello5>
        </div>
    )
  }
@@ -33,9 +40,10 @@ class Hello5 extends React.Component {
   count:0,
  }
 render(){
+ console.log(this.props)
  return (
-       <div style={{background:'#00990d',padding:'20px'}}>
-        555
+       <div onClick={this.props.setCount} style={{background:'#00990d',padding:'20px'}}>
+        555  点击子传父
          <Consumer>
          {
           (value) => <span>---{value}---</span>

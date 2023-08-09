@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 // import WithRouter from './router/withRouter';
 import { useNavigate } from "react-router-dom";
+import { Button,Empty } from "antd";
 
 import { useSelector, useDispatch } from 'react-redux';
 // import { increment, decrement } from './store/actions';
@@ -13,7 +14,6 @@ function Namesss(props) {
  let state = props.state
 
  const count = useSelector((state) => state.counter.count);
- console.log(count)
  const dispatch = useDispatch();
 
  let goLink = (e)=>{
@@ -24,6 +24,9 @@ function Namesss(props) {
  }
  return(
   <div>
+     使用antui：
+     <Button size='mini'>123</Button>
+     <Empty />
     <div onClick={props.goLink}>加值, <span>{state.aaa}</span> </div>
     <div onClick={goLink}>跳转</div>
     <div onClick={goLink2}>跳转redux</div>

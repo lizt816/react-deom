@@ -9,6 +9,11 @@ import { BrowserRouter as Router,Routes,Route,Link,RouterProvider } from "react-
 import router from "./router/index.js";
 import { Provider } from 'react-redux';
 import store from './store';
+
+// 由于 antd 组件的默认文案是英文，所以需要修改为中文
+import { ConfigProvider } from 'antd';
+import zhCN from 'antd/es/locale/zh_CN';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let getFun = (e)=>{
@@ -26,9 +31,10 @@ let getFun = (e)=>{
 root.render(
  // router
  <Provider store={store}>
-  <RouterProvider router={router}>
-   
-  </RouterProvider>
+  <ConfigProvider locale={zhCN}>
+   <RouterProvider router={router}>
+   </RouterProvider>
+  </ConfigProvider>
  </Provider>
 );
 

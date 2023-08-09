@@ -48,17 +48,11 @@ class Hello extends React.Component {
    }
    addArr = e=>{
     let list = JSON.parse(JSON.stringify(this.state.arr)) 
-    list.push(this.props.name)
-    console.log(this.props.name)
+    list.push("111")
     this.setState({
        arr:list
     })
    }
-
-   getFun = e=>{
-    this.props.getFun('123456789')
-   }
-
    changexdd = (e)=>{
     console.log(e,"eee")
     let aaa = JSON.parse(JSON.stringify(e))
@@ -74,7 +68,6 @@ class Hello extends React.Component {
         <div onClick={this.getDom} >点击我获取实例对象</div>
         <div onClick={this.addArr} >点击我添加arr</div>
 
-        <div onClick={this.getFun} >点击我触发子传父</div>
         
         
         {this.state.arr.map((e,i)=><div key={i}>{e}</div>)}
