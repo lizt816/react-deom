@@ -1,3 +1,9 @@
+
+redux的toolkit写法在stores内，可通过修改index.js文件的引入修改./stores然后在demo1.js文件内用到
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
