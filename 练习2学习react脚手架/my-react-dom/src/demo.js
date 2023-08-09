@@ -5,6 +5,19 @@ import Hello4 from './demo4.js';
 import Hello5 from './demo5.js';
 import Hello6 from './demo6.js';
 
+import { useNavigate } from "react-router-dom";
+
+
+function Navigate(params) {
+ const navigate = useNavigate();
+ let golingk=(e)=>{
+  navigate('/Redux?id='+e)
+ }
+ return (
+  <div onClick={()=>golingk('987')} >点击我跳转</div>
+ );
+}
+
 
 class Hello extends React.Component {
   state = {
@@ -54,11 +67,10 @@ class Hello extends React.Component {
      xdddd:aaa
     })
    }
-  
  render(){
   return (
       <div>
-        <div onClick={this.setCount} >点击我{this.state.count3}</div>
+        <Navigate></Navigate>
         <div onClick={this.getDom} >点击我获取实例对象</div>
         <div onClick={this.addArr} >点击我添加arr</div>
 

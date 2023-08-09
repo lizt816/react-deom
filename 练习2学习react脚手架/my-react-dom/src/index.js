@@ -7,7 +7,8 @@ import './demo.css';
 import Hello from './demo.js';
 import { BrowserRouter as Router,Routes,Route,Link,RouterProvider } from "react-router-dom";
 import router from "./router/index.js";
-
+import { Provider } from 'react-redux';
+import store from './store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let getFun = (e)=>{
@@ -24,7 +25,11 @@ let getFun = (e)=>{
 //           </Router>
 root.render(
  // router
- <RouterProvider router={router} />
+ <Provider store={store}>
+  <RouterProvider router={router}>
+   
+  </RouterProvider>
+ </Provider>
 );
 
 

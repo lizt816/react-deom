@@ -4,8 +4,7 @@ import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 import { useSelector, useDispatch } from 'react-redux';
-// import { increment, decrement } from './store/actions';
-import { increment, decrement,incrementByAmount } from './stores/counterSlice';
+import { increment, decrement } from './store/actions';
 
 // 静态的函数写在普通函数内
 function Namesss(props) {
@@ -17,19 +16,18 @@ function Namesss(props) {
  const dispatch = useDispatch();
 
  let goLink = (e)=>{
-  navigate('/demo')
+  navigate('/demo?name=11224')
  }
  let goLink2 = (e)=>{
-  navigate('/Redux')
+  navigate('/?id='+e)
  }
  return(
   <div>
     <div onClick={props.goLink}>加值, <span>{state.aaa}</span> </div>
     <div onClick={goLink}>跳转</div>
-    <div onClick={goLink2}>跳转redux</div>
+    <div onClick={()=>goLink2('1425')}>跳转redux带参数</div>
     <div onClick={() => dispatch(increment())}>redux: 点击改变++：{count}</div>
-    <div onClick={() => dispatch(decrement())}>redux: 点击改变--：{count}</div>
-    <div onClick={() => dispatch(incrementByAmount(123))}>redux: 点击改变为传入的值++：{count}</div>
+    <div onClick={() => dispatch(decrement(123))}>redux: 点击改变为传入的值--：{count}</div>
     {state.data.map(e=><div key={e.id}>{e.title}</div>)}
   </div>
  )

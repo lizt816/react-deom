@@ -1,6 +1,7 @@
 import { BrowserRouter as Router,Routes,Route,createBrowserRouter } from "react-router-dom";
 import Demo1 from "../demo1.js";
 import Demo from "../demo.js";
+import Redux from "../reduxDemo1.js";
 
 let router = createBrowserRouter([
  {
@@ -10,6 +11,10 @@ let router = createBrowserRouter([
  {
   path: "/demo",
   element:(<Demo />)
+ },
+ {
+  path: "/Redux",
+  element:(<Redux />)
  }
 ])
 
